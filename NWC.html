@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<h1 style="text-align:center;">
+Find NWC Faculty Staff Room
+<style>
+img{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+</h1>
+<img src="https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2022/01/srm-logo.svg" align="middle" style="width:200px;height:200px;">
+<body>
+<div align="center">
+<p style="font-size:30px;">Click the Button to Speak Faculty Name</p>
+<button type="button" onclick="func()" style="font-size:16px;">Speak</button>
+<p id="x" type="String" style="font-size:30px;"></p>
+<p id="name" style="font-size:30px;"></p></div>
+<script>
+function func(){
+const arr=["Dr. N Prasath","Mr. K.Manikandan","Dr. Murugaanandam S","Mrs. D.Saveetha","Mrs. G. Geetha","Dr. P. Balamurugan","Mrs. Meenakshi K","Mrs. M.Safa","Dr. K Deepa Thilak","Dr.K.Kalaiselvi","Dr. B. Yamini","Dr. V.Hemamalini","Dr. V.R.Balasaraswathi","Dr.M.Shobana","Dr.M.Jeyaselvi","Dr.R.Radhika","Dr.N.Senthamarai","Dr. Kayalvizhi Jayavel","Dr.L.N.B.Srinivas","Dr.K.Venkatesh","Ms.G.Sujatha","Dr.P.Visalakshi","Dr.V. Elizabeth Jesi","Dr.Mary Subaja Christo","Mrs. G.Parimala","Dr.S.Thanga Revathi","Dr.Mukesh Krishnan","Dr.Vigneshwaran P","Dr.N.Krishnaraj","Mr. H. Karthikeyan ","Dr. M.Anand","Dr. Savaridassan P","Dr. C.Fancy","Mr. V Joseph Raymond","Mr. V.Nallarasan","Mr. Prabakaran J","Dr. Arun.A","Dr. M .Manickam","Dr. R. Lakshminarayanan","Dr.M.Thenmozhi","Dr. S. Metilda Florence","Dr. Nimala.K","Mrs. Lavanya V","Dr.M.Saravanan","Dr. S. Prabakeran","Dr G Suseela","Dr. A. Vijay Vasanth","Dr. P. Supraja","Dr. V.M. Gayathri","Mrs. Saisanthiya","Mrs. V.Vijayalakshmi","Dr. A. Helen Victoria","Mrs. G Divya","Dr.R.Naresh","Mr. K Senthil Kumar","Dr. J Godwin Ponsam","Dr.C.N.S.Vinoth Kumar","Dr. Gouthaman.P","Dr. P. Balaji Srikaanth","Dr. V. Anbarasu","Dr. A. Suresh","Dr.V.Rajaram","Dr.V.Pandimurugan","Mrs. G.Saranya","Dr.Angayarkanni","Dr.Malathy","Mr. T.Balachander","Dr. C. Rajesh Babu","Dr. Vaishnavi Moorthy","Dr.Kayalvizhi R","Dr.Praveena Akki","Dr.Varunkumar","Dr. S. Thenmalar","Dr.TYJ Naga Malleswari","Dr. Ushasukhanya S","Ms. Mahalakshmi.P","Dr.Sivanesan"];
+var recognition=new webkitSpeechRecognition();
+recognition.lang="en-GB";
+recognition.onresult=function(event){
+console.log(event);
+document.getElementById('x').innerHTML=event.results[0][0].transcript;
+var z=String(event.results[0][0].transcript);
+console.log(z);
+var k=z.length;
+if(z.indexOf("sir")==-1)
+if(z.indexOf("maam")==-1)
+k=z.indexOf("mam");
+else
+k=z.indexOf("maam");
+else
+k=z.indexOf("sir");
+console.log(k);
+var y=z.substring(0,k);
+console.log(y);
+var ans="";
+for(let i=0;i<77;i++)
+if(arr[i].toLowerCase().indexOf(y.toLowerCase().trim())!=-1)
+ans=arr[i];
+var dict={"Dr. N Prasath":"TP203A","Mr. K.Manikandan":"TP203A","Dr. Murugaanandam S":"TP203A","Mrs. D.Saveetha":"TP203A","Mrs. G. Geetha":"TP203A","Dr. P. Balamurugan":"TP206A","Mrs. Meenakshi K":"TP206A","Mrs. M.Safa":"TP206A","Dr. K Deepa Thilak":"TP206A","Dr.K.Kalaiselvi":"TP206A","Dr. B. Yamini":"TP206A","Dr. V.Hemamalini":"TP209","Dr. V.R.Balasaraswathi":"TP209","Dr.M.Shobana":"TP209","Dr.M.Jeyaselvi":"TP209","Dr.R.Radhika":"TP209","Dr.N.Senthamarai":"TP209","Dr. Kayalvizhi Jayavel":"TP303A","Dr.L.N.B.Srinivas":"TP303A","Dr.K.Venkatesh":"TP303A","Ms.G.Sujatha":"TP303A","Dr.P.Visalakshi":"TP306A","Dr.V. Elizabeth Jesi":"TP306A","Dr.Mary Subaja Christo":"TP306A","Mrs. G.Parimala":"TP306A","Dr.S.Thanga Revathi":"TP306A","Dr.Mukesh Krishnan":"TP309","Dr.Vigneshwaran P":"TP403A","Dr.N.Krishnaraj":"TP403A","Mr. H. Karthikeyan ":"TP403A","Dr. M.Anand":"TP403A","Dr. Savaridassan P":"TP403A","Dr. C.Fancy":"TP403A","Mr. V Joseph Raymond":"TP406A","Mr. V.Nallarasan":"TP406A","Mr. Prabakaran J":"TP406A","Dr. Arun.A":"TP406A","Dr. M .Manickam":"TP406A","Dr. R. Lakshminarayanan":"TP406A","Dr.M.Thenmozhi":"TP503A","Dr. S. Metilda Florence":"TP503A","Dr. Nimala.K":"TP503A","Mrs. Lavanya V":"TP503A","Dr.M.Saravanan":"TP506A","Dr. S. Prabakeran":"TP506A","Dr G Suseela":"TP506A","Dr. A. Vijay Vasanth":"TP506A","Dr. P. Supraja":"TP509","Dr. V.M. Gayathri":"TP509","Mrs. Saisanthiya":"TP509","Mrs. V.Vijayalakshmi":"TP509","Dr. A. Helen Victoria":"TP509","Mrs. G Divya":"TP509","Dr.R.Naresh":"TP511","Mr. K Senthil Kumar":"TP511","Dr. J Godwin Ponsam":"TP511","Dr.C.N.S.Vinoth Kumar":"TP512","Dr. Gouthaman.P":"TP512","Dr. P. Balaji Srikaanth":"TP512","Dr. V. Anbarasu":"TP1503A","Dr. A. Suresh":"TP1503A","Dr.V.Rajaram":"TP1503A","Dr.V.Pandimurugan":"TP1503A","Mrs. G.Saranya":"TP1503A","Dr.Angayarkanni":"TP1503A","Dr.Malathy":"TP1310","Mr. T.Balachander":"TP1506A","Dr. C. Rajesh Babu":"TP1506A","Dr. Vaishnavi Moorthy":"TP1506A","Dr.Kayalvizhi R":"TP1506A","Dr.Praveena Akki":"TP1506A","Dr.Varunkumar":"TP1506A","Dr. S. Thenmalar":"TP1512","Dr.TYJ Naga Malleswari":"TP1512","Dr. Ushasukhanya S":"TP1512","Ms. Mahalakshmi.P":"TP1512","Dr.Sivanesan":"TP1512"};
+document.getElementById('name').innerHTML=ans+" is available at: "+dict[ans];
+}
+recognition.start();
+}</script>
+</body>
+</html>
